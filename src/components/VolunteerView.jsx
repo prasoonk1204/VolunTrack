@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Slider from "react-slick"; // Importing react-slick for carousel functionality
+import FAQ from "./FAQ"; // Import the FAQ component
 
 const VolunteerView = () => {
   const navigate = useNavigate();
@@ -120,6 +121,8 @@ const VolunteerView = () => {
           ))}
         </Slider>
       </div>
+       {/* FAQ Section */}
+       <FAQ /> {/* Add the FAQ component here */}
     </div>
   );
 };

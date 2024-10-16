@@ -10,7 +10,7 @@ import OrganizerView from "./components/OrganizerView";
 import yourImage from "./assets/main.jpeg";
 import VolunteerLogin from "./components/VolunteerLogin";
 import VolunteerSignup from "./components/VolunteerSignup";
-import OrganizerLogin from "./components/OrganizerLogin";
+// import OrganizerLogin from "./components/OrganizerLogin";
 import OrganizerSignup from "./components/OrganizerSignup";
 
 const App = () => {

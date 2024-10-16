@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Slider from "react-slick"; // Importing react-slick for carousel functionality
-import FAQ from "./FAQ"; // Import the FAQ component
+import FAQ from "./FaqV"; // Import the FAQ component
 
 const VolunteerView = () => {
   const navigate = useNavigate();
@@ -94,9 +94,9 @@ const VolunteerView = () => {
 
   return (
     <div className="p-8 bg-blue-500">
-      <div className="flex justify-center m-3">
+      <div className="flex justify-center mt-4">
         {/* Welcome Message */}
-        <h2 className="text-3xl font-semibold mb-4 text-white">Our Features</h2>
+        <h2 className="text-3xl font-semibold text-white">Our Features</h2>
       </div>
 
       {/* Features Section Carousel */}

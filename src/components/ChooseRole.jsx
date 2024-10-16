@@ -28,7 +28,7 @@ const ChooseRole = () => {
             ${
               view === "volunteer"
                 ? "bg-blue-500 text-white"
-                : "bg-white text-black hover:bg-slate-100"
+                : "bg-white text-gray-800 hover:bg-slate-100"
             }`}
           onClick={() => setView("volunteer")}
         >
@@ -39,7 +39,7 @@ const ChooseRole = () => {
             className={`mr-4 px-4 py-2 rounded ${
               view === "volunteer"
                 ? "border-2 border-solid border-white transition-all text-white hover:bg-white hover:text-black"
-                : "bg-black text-white border-2 border-solid border-black"
+                : "bg-gray-800 text-white border-2 border-solid border-gray-800"
             }`}
             onClick={handleVolunteerSignup}
             disabled={view === "organizer"}
@@ -54,7 +54,7 @@ const ChooseRole = () => {
             ${
               view === "organizer"
                 ? "bg-blue-500 text-white"
-                : "bg-white text-black hover:bg-slate-100"
+                : "bg-white text-gray-800 hover:bg-slate-100"
             }`}
           onClick={() => setView("organizer")} // Disable if Volunteer view is active
         >
@@ -66,7 +66,7 @@ const ChooseRole = () => {
             className={`px-4 py-2 rounded ${
               view === "organizer"
                 ? "border-2 border-solid border-white transition-all text-white hover:bg-white hover:text-black"
-                : "bg-black text-white border-2 border-solid border-black"
+                : "bg-gray-800 text-white border-2 border-solid border-gray-800"
             }`}
             onClick={handleOrganizerSignup}
             disabled={view === "volunteer"} // Disable if Volunteer view is active

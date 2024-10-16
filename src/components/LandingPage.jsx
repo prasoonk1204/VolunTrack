@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import VolunteerView from "./VolunteerView";
 import OrganizerView from "./OrganizerView";
-import yourImage from "../assets/main.jpeg";
+// import yourImage from "../assets/main.jpeg";
 
 const LandingPage = () => {
   const [view, setView] = useState("volunteer"); // Default view
@@ -19,14 +19,14 @@ const LandingPage = () => {
   return (
     <div className="flex flex-col items-center w-full">
       {/* Landing Image */}
-      <img
-        src={yourImage}
-        alt="Landing"
-        className="w-full h-96 object-cover mb-4"
-      />
+      <div className="w-full h-svh relative flex flex-col justify-center items-center">
+        <h1 className="text-6xl ">VolunTrack</h1>
+        <p className="text-2xl">Connecting Volunteers and Organizers for a Better Tomorrow.</p>
+        {/* <img src={yourImage} alt="Landing" className="h-1/2 mb-4" /> */}
+      </div>
 
       {/* Button Options */}
-      <div className="w-full h-screen flex gap-6">
+      <div className="w-full h-96 flex gap-6">
         <button
           className={`w-1/2 flex flex-col justify-center items-center gap-10 
             ${
@@ -36,7 +36,7 @@ const LandingPage = () => {
             }`}
           onClick={() => setView("volunteer")}
         >
-          <h1 className="text-5xl h-48">
+          <h1 className="text-4xl h-32">
             Engage, Empower, Impact – Join the Movement and Make a Difference!
           </h1>
           <button
@@ -59,7 +59,7 @@ const LandingPage = () => {
             }`}
           onClick={() => setView("organizer")}
         >
-          <h1 className="text-5xl h-48">
+          <h1 className="text-4xl h-32">
             Connect, Coordinate, Contribute - Streamline Volunteer Management
             for Your Organization
           </h1>

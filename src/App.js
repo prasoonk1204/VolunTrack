@@ -11,6 +11,9 @@ import OrganizerLogin from "./components/OrganizerLogin";
 import OrganizerSignup from "./components/OrganizerSignup";
 import LandingPage from "./components/LandingPage";
 import ChooseRolePage from "./components/ChooseRole"; // Import the new ChooseRolePage component
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 
 const App = () => {
   return (

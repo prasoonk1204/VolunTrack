@@ -29,14 +29,14 @@ const ChooseRole = () => {
             }`}
           onClick={() => setView("volunteer")}
         >
-          <h1 className="text-4xl h-32">
+          <h1 className="text-4xl h-28">
             Engage, Empower, Impact – Join the Movement and Make a Difference!
           </h1>
           <button
             className={`mr-4 px-4 py-2 rounded ${
               view === "volunteer"
                 ? "border-2 border-solid border-white transition-all text-white hover:bg-white hover:text-black"
-                : "bg-black text-white"
+                : "bg-black text-white border-2 border-solid border-black"
             }`}
             onClick={handleVolunteerSignup}
             disabled={view === "organizer"}
@@ -55,7 +55,7 @@ const ChooseRole = () => {
             }`}
           onClick={() => setView("organizer")} // Disable if Volunteer view is active
         >
-          <h1 className="text-4xl h-32">
+          <h1 className="text-4xl h-28">
             Connect, Coordinate, Contribute - Streamline Volunteer Management
             for Your Organization
           </h1>
@@ -63,7 +63,7 @@ const ChooseRole = () => {
             className={`px-4 py-2 rounded ${
               view === "organizer"
                 ? "border-2 border-solid border-white transition-all text-white hover:bg-white hover:text-black"
-                : "bg-black text-white"
+                : "bg-black text-white border-2 border-solid border-black"
             }`}
             onClick={handleOrganizerSignup}
             disabled={view === "volunteer"} // Disable if Volunteer view is active
@@ -74,7 +74,7 @@ const ChooseRole = () => {
       </div>
 
       {/* Content Based on Selected View */}
-      <div className="w-full rounded shadow-lg">
+      <div className="w-full rounded-2xl">
         {view === "volunteer" ? <VolunteerView /> : <OrganizerView />}
       </div>
     </div>

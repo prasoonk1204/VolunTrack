@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import VolunteerView from "./VolunteerView";
 import OrganizerView from "./OrganizerView";
+import Header from "./Header";
+import Footer from "./Footer";
 
 const ChooseRole = () => {
   const [view, setView] = useState("volunteer"); // Default view
@@ -17,6 +19,7 @@ const ChooseRole = () => {
 
   return (
     <div className="flex flex-col items-center w-full">
+      <Header />
       {/* Button Options */}
       <div className="w-full h-96 flex">
         {/* Volunteer Button */}
@@ -77,6 +80,7 @@ const ChooseRole = () => {
       <div className="w-full rounded-2xl">
         {view === "volunteer" ? <VolunteerView /> : <OrganizerView />}
       </div>
+      <Footer />
     </div>
   );
 };

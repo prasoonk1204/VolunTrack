@@ -4,10 +4,6 @@ import { useNavigate } from "react-router-dom";
 const OrganizerView = () => {
   const navigate = useNavigate();
 
-  const handleOrganizerSignup = () => {
-    navigate("/signup/organizer"); // Redirect to the organizer login page
-  };
-
 
   return (
     <div className="p-4">
@@ -15,14 +11,6 @@ const OrganizerView = () => {
         {/* Welcome Message */}
         <h2 className="text-2xl font-semibold mb-4">Welcome, Organizer!</h2>
 
-        {/* Buttons for Login/Signup */}
-
-        <button
-          className="bg-blue-500 text-white py-2 px-4 rounded shadow-md hover:bg-blue-600 transition duration-200"
-          onClick={handleOrganizerSignup}
-        >
-          Login / Signup
-        </button>
       </div>
 
       {/* Features Section */}

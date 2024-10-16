@@ -4,24 +4,12 @@ import { useNavigate } from "react-router-dom";
 const VolunteerView = () => {
   const navigate = useNavigate();
 
-  const handleVolunteerSignup = () => {
-    navigate("/signup/volunteer"); // Redirect to the volunteer login page
-  };
 
   return (
     <div className="p-4 ">
       <div className="flex justify-between space-x-4 mb-6">
         {/* Welcome Message */}
         <h2 className="text-2xl font-semibold mb-4">Welcome, Volunteer!</h2>
-
-        <button
-          className="bg-blue-500 text-white py-2 px-4 rounded shadow-md hover:bg-blue-600 transition duration-200"
-          onClick={handleVolunteerSignup}
-        >
-          Login / Signup
-        </button>
-
-        {/* Buttons for Login/Signup */}
       </div>
 
       {/* Features Section */}

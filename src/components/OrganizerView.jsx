@@ -6,17 +6,13 @@ const OrganizerView = () => {
 
 
   return (
-    <div className="p-4">
-      <div className="flex justify-between space-x-4 mb-6">
+    <div className="p-8 bg-blue-500">
+      <div className="flex justify-center m-3">
         {/* Welcome Message */}
-        <h2 className="text-2xl font-semibold mb-4">Welcome, Organizer!</h2>
-
+        <h2 className="text-3xl font-semibold mb-4">Our Features</h2>
       </div>
 
       {/* Features Section */}
-      <h3 className="text-xl font-semibold mt-6 mb-2">
-        Key Features for Organizers
-      </h3>
       <div className="bg-white shadow-lg rounded-lg p-4">
         <ul className="list-disc list-inside">
           <li className="mb-2">

@@ -1,84 +1,39 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import VolunteerView from "./VolunteerView";
-import OrganizerView from "./OrganizerView";
-// import yourImage from "../assets/main.jpeg";
 
 const LandingPage = () => {
-  const [view, setView] = useState("volunteer"); // Default view
   const navigate = useNavigate();
 
-  const handleVolunteerSignup = () => {
-    navigate("/signup/volunteer"); // Redirect to the volunteer signup page
-  };
-
-  const handleOrganizerSignup = () => {
-    navigate("/signup/organizer"); // Redirect to the organizer signup page
+  const handleGetStarted = () => {
+    navigate("/choose"); // Redirect to the page with Volunteer and Organizer options
   };
 
   return (
     <div className="flex flex-col items-center w-full">
-      {/* Landing Image */}
-      <div className="w-full h-svh relative flex flex-col justify-center items-center">
-        <h1 className="text-6xl ">VolunTrack</h1>
-        <p className="text-2xl">Connecting Volunteers and Organizers for a Better Tomorrow.</p>
-        {/* <img src={yourImage} alt="Landing" className="h-1/2 mb-4" /> */}
-      </div>
+      {/* Landing Section with Spline Design */}
+      <div className="w-full h-screen relative flex flex-col justify-center items-center">
+        {/* Spline 3D Design */}
+        <iframe
+          src="https://my.spline.design/particleshand-650d426739ad3f62de6e0ef270ba5729/"
+          className="h-screen w-full m-0"
+          title="Spline Design"
+        ></iframe>
 
-      {/* Button Options */}
-      <div className="w-full h-96 flex gap-6">
-        <button
-          className={`w-1/2 flex flex-col justify-center items-center gap-10 
-            ${
-              view === "volunteer"
-                ? "bg-blue-500 text-white"
-                : "bg-gray-300 text-black"
-            }`}
-          onClick={() => setView("volunteer")}
-        >
-          <h1 className="text-4xl h-32">
-            Engage, Empower, Impact – Join the Movement and Make a Difference!
-          </h1>
-          <button
-            className={`mr-4 px-4 py-2 rounded ${
-              view === "volunteer"
-                ? "bg-gray-50 text-black"
-                : "bg-black text-white"
-            }`}
-            onClick={handleVolunteerSignup}
-          >
-            Join as Volunteer
-          </button>
-        </button>
-        <button
-          className={`w-1/2 flex flex-col justify-center items-center gap-10 
-            ${
-              view === "organizer"
-                ? "bg-blue-500 text-white"
-                : "bg-gray-300 text-black"
-            }`}
-          onClick={() => setView("organizer")}
-        >
-          <h1 className="text-4xl h-32">
-            Connect, Coordinate, Contribute - Streamline Volunteer Management
-            for Your Organization
-          </h1>
-          <button
-            className={`px-4 py-2 rounded ${
-              view === "organizer"
-                ? "bg-gray-50 text-black"
-                : "bg-black text-white"
-            }`}
-            onClick={handleOrganizerSignup}
-          >
-            Host as Organizer
-          </button>
-        </button>
-      </div>
+        {/* Overlay Text */}
+        <div className="absolute top-1/2 transform -translate-y-1/2 text-center">
+          <h1 className="text-6xl text-black mb-4">VolunTrack</h1>
+          <p className="text-3xl text-black mb-8">
+            Connecting Volunteers and Organizers for a Better Tomorrow.
+          </p>
 
-      {/* Content Based on Selected View */}
-      <div className="w-full px-4 bg-white rounded shadow-lg">
-        {view === "volunteer" ? <VolunteerView /> : <OrganizerView />}
+          {/* Get Started Button */}
+          <button
+            onClick={handleGetStarted}
+            className="px-8 py-3 border-4 border-blue-500 hover:text-white text-xl rounded-xl hover:bg-blue-500 transition duration-300"
+          >
+            Get Started
+          </button>
+        </div>
       </div>
     </div>
   );

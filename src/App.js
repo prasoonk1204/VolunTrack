@@ -10,10 +10,15 @@ import VolunteerSignup from "./components/VolunteerSignup";
 import OrganizerLogin from "./components/OrganizerLogin";
 import OrganizerSignup from "./components/OrganizerSignup";
 import LandingPage from "./components/LandingPage";
-import ChooseRolePage from "./components/ChooseRole"; // Import the new ChooseRolePage component
+import ChooseRolePage from "./components/ChooseRole";
+import VDashboard from "./components/volunteer/VDashboard";
+import VEventList from "./components/volunteer/VEventList";
+import VTasks from "./components/volunteer/VTasks";
+import VProfile from "./components/volunteer/VProfile";
+import VCalendar from "./components/volunteer/VCalendar"; // Import volunteer components
+import ODashboard from "./components/organizer/ODashboard";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
 
 const App = () => {
   return (
@@ -32,6 +37,16 @@ const App = () => {
 
           {/* New page for choosing between Volunteer and Organizer */}
           <Route path="/choose" element={<ChooseRolePage />} />
+
+          {/* Volunteer-specific routes */}
+          <Route path="/volunteer/dashboard" element={<VDashboard />} />
+          <Route path="/volunteer/events" element={<VEventList />} />
+          <Route path="/volunteer/tasks" element={<VTasks />} />
+          <Route path="/volunteer/profile" element={<VProfile />} />
+          <Route path="/volunteer/calendar" element={<VCalendar />} />
+
+          {/* Organizer-specific routes */}
+          <Route path="/organizer/dashboard" element={<ODashboard />} />
 
           {/* Redirect any unmatched routes to the homepage */}
           <Route path="*" element={<Navigate to="/" />} />

@@ -14,3 +14,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.flex {
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+
+.bg-white {
+  /* Ensure the width does not exceed the container */
+  max-width: 100%;
+}

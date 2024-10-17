@@ -4,17 +4,19 @@ import VolunteerView from "./VolunteerView";
 import OrganizerView from "./OrganizerView";
 import Header from "./Header";
 import Footer from "./Footer";
+import VDashboard from "./volunteer/VDashboard";
 
 const ChooseRole = () => {
   const [view, setView] = useState("volunteer"); // Default view
   const navigate = useNavigate();
 
-  const handleVolunteerSignup = () => {
-    navigate("/signup/volunteer"); // Redirect to the volunteer signup page
+  // Directly navigate to volunteer dashboard
+  const handleVolunteerDashboard = () => {
+    navigate("/volunteer/dashboard"); // Redirect to the volunteer dashboard
   };
 
-  const handleOrganizerSignup = () => {
-    navigate("/signup/organizer"); // Redirect to the organizer signup page
+  const handleOrganizerDashboard = () => {
+    navigate("/organizer/dashboard"); // Redirect to the organizer dashboard
   };
 
   return (
@@ -41,7 +43,7 @@ const ChooseRole = () => {
                 ? "border-2 border-solid border-white transition-all text-white hover:bg-white hover:text-black"
                 : "bg-gray-800 text-white border-2 border-solid border-gray-800"
             }`}
-            onClick={handleVolunteerSignup}
+            onClick={handleVolunteerDashboard} // Updated to navigate to dashboard
             disabled={view === "organizer"}
           >
             Join as Volunteer
@@ -56,7 +58,7 @@ const ChooseRole = () => {
                 ? "bg-blue-500 text-white"
                 : "bg-white text-gray-800 hover:bg-slate-100"
             }`}
-          onClick={() => setView("organizer")} // Disable if Volunteer view is active
+          onClick={() => setView("organizer")}
         >
           <h1 className="text-4xl h-28">
             Connect, Coordinate, Contribute - Streamline Volunteer Management
@@ -68,7 +70,7 @@ const ChooseRole = () => {
                 ? "border-2 border-solid border-white transition-all text-white hover:bg-white hover:text-black"
                 : "bg-gray-800 text-white border-2 border-solid border-gray-800"
             }`}
-            onClick={handleOrganizerSignup}
+            onClick={handleOrganizerDashboard}
             disabled={view === "volunteer"} // Disable if Volunteer view is active
           >
             Host as Organizer

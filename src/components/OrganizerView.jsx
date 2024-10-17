@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import Slider from "react-slick"; // Importing react-slick for carousel functionality
 import FaqO from "./FaqO"; // Import the FAQ component
+
 const OrganizerView = () => {
   const navigate = useNavigate();
 
@@ -88,36 +89,39 @@ const OrganizerView = () => {
   };
 
   return (
-    <div className="p-8 bg-blue-500">
+    <div className="">
       <div className="flex justify-center mt-4">
         {/* Welcome Message */}
-        <h2 className="text-3xl font-semibold text-white">Our Features</h2>
+        <h2 className="text-4xl font-bold text-gray-800 mb-8">Our Features</h2>
       </div>
 
       {/* Features Section Carousel */}
-      <div className="bg-transparent shadow-lg rounded-lg p-4">
+      <div className="bg-gradient-to-r from-green-500 to-teal-600 shadow-lg rounded-lg p-6">
         <Slider {...settings}>
           {features.map((feature, index) => (
             <div key={index} className="p-4">
-              <div className="bg-gray-100 rounded-lg shadow-md h-80">
+              <div className="bg-white rounded-lg shadow-md h-80 transform hover:scale-105 transition-transform duration-300">
                 <img
                   src={feature.image}
                   alt={feature.title}
                   className="w-full h-44 object-cover rounded-t-lg"
                 />
                 <div className="p-4">
-                  <h2 className="text-lg font-semibold mb-2">
+                  <h2 className="text-lg font-bold mb-2 text-gray-800">
                     {feature.title}
                   </h2>
-                  <p>{feature.description}</p>
+                  <p className="text-gray-600">{feature.description}</p>
                 </div>
               </div>
             </div>
           ))}
         </Slider>
       </div>
-       {/* FAQ Section */}
-       <FaqO />
+
+      {/* FAQ Section */}
+      <div className="mt-12">
+        <FaqO />
+      </div>
     </div>
   );
 };

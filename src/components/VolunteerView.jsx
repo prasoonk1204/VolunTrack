@@ -93,36 +93,39 @@ const VolunteerView = () => {
   };
 
   return (
-    <div className="p-8 bg-blue-500">
-      <div className="flex justify-center mt-4">
+    <div className="">
+      <div className="flex justify-center mt-4 mb-8">
         {/* Welcome Message */}
-        <h2 className="text-3xl font-semibold text-white">Our Features</h2>
+        <h2 className="text-4xl font-bold text-gray-800">Our Features</h2>
       </div>
 
       {/* Features Section Carousel */}
-      <div className="bg-transparent shadow-lg rounded-lg p-4">
+      <div className="bg-gradient-to-r from-blue-500 to-indigo-600 shadow-xl rounded-lg p-6">
         <Slider {...settings}>
           {features.map((feature, index) => (
             <div key={index} className="p-4">
-              <div className="bg-gray-100 rounded-lg shadow-md h-80">
+              <div className="bg-white rounded-lg shadow-md h-80 transition-transform transform hover:scale-105">
                 <img
                   src={feature.image}
                   alt={feature.title}
                   className="w-full h-44 object-cover rounded-t-lg"
                 />
                 <div className="p-4">
-                  <h2 className="text-lg font-semibold mb-2">
+                  <h2 className="text-xl font-semibold text-gray-800 mb-2">
                     {feature.title}
                   </h2>
-                  <p>{feature.description}</p>
+                  <p className="text-gray-600">{feature.description}</p>
                 </div>
               </div>
             </div>
           ))}
         </Slider>
       </div>
-       {/* FAQ Section */}
-       <FAQ /> {/* Add the FAQ component here */}
+
+      {/* FAQ Section */}
+      <div className="mt-12">
+        <FAQ /> {/* Add the FAQ component here */}
+      </div>
     </div>
   );
 };

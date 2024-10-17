@@ -43,28 +43,28 @@ const FaqO = () => {
   };
 
   return (
-    <div className="mt-12 flex flex-col items-center">
-      <h2 className="text-3xl font-semibold mb-4 text-white text-center">
+    <div className="my-12 flex flex-col items-center">
+      <h2 className="text-3xl font-semibold mb-4 text-gray-800 text-center">
         Frequently Asked Questions
       </h2>
-      <div className="bg-blue-500 rounded-lg shadow-md p-4 flex flex-col items-center w-full">
+      <div className="bg-gradient-to-r from-green-500 to-teal-600 bg-white rounded-lg shadow-lg p-6 flex flex-col items-center w-full max-w-4xl">
         {faqs.map((faq, index) => (
-          <div key={index} className="mb-4 w-3/4">
+          <div key={index} className="mb-4 w-full">
             <button
-              className="w-full text-left p-2 px-8 bg-gray-100 focus:bg-gray-300 hover:bg-gray-300 text-black flex justify-between items-center"
+              className="w-full text-left p-4 bg-gray-100 text-black hover:bg-gray-200 flex justify-between items-center rounded-t-lg"
               onClick={() => toggleAnswer(index)}
             >
-              <div>{faq.question}</div>
-              <div className="ml-2">
+              <div className="text-lg font-semibold">{faq.question}</div>
+              <div className="ml-2 text-lg">
                 {visibleIndex === index ? (
-                  <span>&#9650;</span>
+                  <span>&#9650;</span> // Up arrow
                 ) : (
-                  <span>&#9660;</span>
+                  <span>&#9660;</span> // Down arrow
                 )}
               </div>
             </button>
             {visibleIndex === index && (
-              <div className="p-2 px-8 bg-gray-100 text-left w-full">
+              <div className="p-4 bg-gray-50 text-left w-full rounded-b-lg">
                 {faq.answer}
               </div>
             )}
